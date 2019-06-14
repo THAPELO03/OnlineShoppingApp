@@ -1,0 +1,21 @@
+#heading{
+    background-color: aquamarine;
+    color: black;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 3px solid black;
+}
+#sub{
+    background-color:goldenrod;
+    border: 1px solid grey;
+}
+#details{
+    text-align: center;
+    background-color: goldenrod;
+    color:black;
+}
+#total{
+    background-color: maroon;
+    color: white;
+}

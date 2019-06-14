@@ -1,0 +1,76 @@
+<!--The content below is only a placeholder and can be replaced.-->
+        <!--My Html content component-->
+<div style="text-align:center" >
+
+    <div id="heading">
+          <h1>
+            Welcome to Online Toys {{ title }} Shopping!
+          </h1>
+  <img width="300" height="150" alt="Shop Logo" src="assets\images\logo.jpg">
+</div>
+        <div id="sub">
+                <h2>Please Make a Selection of What you would Like to Shop Thanks!! </h2>
+                
+          </div>
+          <!---list of product with their pics-->
+        
+        <mat-grid-list cols="4" rowHeight="1:1">
+          <mat-grid-tile *ngFor = "let toy of Toys">
+              <mat-card>
+                  <mat-card-title>{{ toy.Name }}</mat-card-title>
+                  <img class="circle-Pic" width="250" height="200" src="../assets/images/{{toy.Pic}}"/>
+                  <mat-card-content>
+                    <h2>
+                        <b><strong>R{{ toy.Price }}</strong></b>
+                    </h2>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button  mat-raised-button color="primary" (click)="AddtoCart(toy)">ADD to Cart</button>
+                    <!---<button mat-raised-button color="warn">Remove</button>--->
+                  </mat-card-actions>
+                  </mat-card>
+          </mat-grid-tile>
+      </mat-grid-list>  
+<form></form>
+<div id="details">
+    <h2>
+     <i> Here are your Shopping details for what you have Added!</i>
+    </h2>
+     
+    <!---Adding to Quatations-->
+    
+    <mat-grid-list cols="4" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let new_toy of NewToy">
+          <mat-card>
+            <mat-card-title>{{ new_toy.Name }}</mat-card-title>
+            <!-- <img class="circle-pic" width="300" src="../assets/images/{{cartlis.pic}}"> -->
+            <img mat-card-sm-image width="300" src="assets/images/{{new_toy.Pic}}"/>
+            <mat-card-content>
+              <h2>
+                <b><strong>R{{ new_toy.Price}}</strong></b>
+              </h2>
+            </mat-card-content>
+            <mat-card-actions>
+              <button (click)="deleteCart(new_toy)" mat-raised-button color="warn">delete</button>
+            </mat-card-actions>
+          </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+
+
+
+
+<!--Total price and the Quantity of the products-->
+<div id="total">
+<nav>
+  <h3>
+    Total: R{{total}}
+  </h3>
+
+  <h3>
+    Quantity: {{productNumber}}
+  </h3>
+</nav>
+</div>
+<router-outlet></router-outlet>
